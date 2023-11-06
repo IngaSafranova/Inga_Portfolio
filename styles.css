@@ -2,6 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  
 }
 /* Custom properties*/
 
@@ -37,8 +38,15 @@
 }
 
 /*General styles*/
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--clr-light);
+  background-image: url(./assets/images/richard-horvath-_nWaeTF6qo0-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--clr-dark);
   margin: 0;
   font-family: var(--ff-primary);
@@ -81,11 +89,7 @@ span {
 .btn:hover {
   transform: scale(1.1);
 }
-.logo-image {
-  width: 15%;
-  height: 15%;
-  margin-top: 1rem;
-}
+
 
 /* Typography*/
 
@@ -128,9 +132,118 @@ section {
    margin: 0.5em;
     box-shadow:var(--bs);
 }
+
+/* Navbar styles*/
+
+header {
+ 
+  width: 100%;
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+ 
+}
+.logo {
+  width: 200px;
+  margin-top: 1rem;
+
+}
+
+.nav {
+  position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5,1)
+}
+.nav__list {
+  list-style: none;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  color: inherit;
+  font-weight: (-var(--fw-bold));
+text-decoration: none;
+  font-size: var(--fs-h3);
+}
+.nav__link:hover {
+  color: var(--clr-primary);
+}
+
+.nav-toggle {
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 10;
+}
+
+.nav-open .nav{
+ transform: translateX(0);
+}
+.nav-open .nav-toggle {
+  position: fixed;
+}
+
+.nav-open .hamburger {
+  transform: rotate(.625turn);
+}
+
+ .nav-open .hamburger::before {
+  transform: rotate(90deg) translateX(-6px);
+} 
+/*to remove second line from X that we made above*/
+.nav-open .hamburger::after {
+  opacity: 0;
+}
+.hamburger {
+  display: block;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  background: var(--clr-secondary);
+  width: 2em;
+  height: 3px;
+  border-radius: 1em;
+  transition: transform 250ms ease-in-out;
+}
+
+/*Seudo classes have to have a content, otherwise they wont work*/
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+
+}
+.hamburger::before {
+  top: 6px;
+}
+.hamburger::after{
+  bottom: 6px;
+}
  /* Intro styles */
  .intro {
-    background: var(--clr-dark);
+
     color: var(--clr-light);
  }
 .section__subtitle--intro {
@@ -148,18 +261,16 @@ section {
 
     text-align: center;
 }
-nav {
-    display: none;
-}
+
 
 /* Services styles*/
 
 .my-services {
   color:var(--clr-light);
-background-color: var(--clr-dark);
-  background-image: url(./assets/images/welcome-01.png);
+/* background-color: var(--clr-dark);
+  background-image: url(./assets/images/richard-horvath-_nWaeTF6qo0-unsplash.jpg);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   text-align: center;
   box-shadow: var(--bs);
   
@@ -187,13 +298,13 @@ background-color: var(--clr-dark);
   margin: 0 auto;
 }
 .service h3{
-  color: var(--clr-dark);
+  color: var(--clr-primary);
 }
 
 /*My Projects*/
 
 .my-work {
-  background-color: var(--clr-dark);
+  /* background-color: var(--clr-dark); */
   color: var(--clr-primary);
   text-align: center;
 
@@ -209,14 +320,20 @@ background-color: var(--clr-dark);
   
 }
 .portfolio__item {
-  background: var(--clr-dark);
+  /* background: var(--clr-dark); */
   overflow: hidden;
 }
 
 .portfolio__img {
+  width: 90%;
+  height:300px ;
+  margin-bottom:.5em;
+  box-shadow: 0.25em 0.25em 0.75em rgba(146, 121, 225, 0.25),
+  0.125em 0.125em 0.25em rgb(42, 34, 70);
   transition: 
       transform 750ms cubic-bezier(.5, 0, .5, 1),
       opacity 250ms linear;
+      
 }
 .portfolio__item:focus {
   position: relative;
@@ -224,24 +341,30 @@ background-color: var(--clr-dark);
 }
 
 .portfolio__img:hover,
-.portfolio__item:focus .portfolio__img {
+.portfolio__img--portfolio:hover,
+.portfolio__item:focus .portfolio__img,
+.portfolio__item:focus .portfolio__img--portfolio {
   transform: scale(1.2);
   opacity: .8 5;
 }
 /*Footer*/
 .footer {
+  
   background: #111;
   color: var(--clr-primary);
-  text-align: center;
-  padding: 2.5em 0;
-  display: flex;
-  flex-direction: column;
-justify-content: center;
+   text-align: center; 
+  padding: 1em 0;
+  
+  /* display: flex;
+   flex-direction: column;  */
+/* justify-items: center; */
 }
 .social-list {
   list-style: none;
   display: flex;
-justify-content: center;
+ justify-content: center; 
+ margin: 2em 0 0;
+ padding: 0;
   
 }
 .footer a {
@@ -249,10 +372,8 @@ justify-content: center;
   text-decoration: none;
 
 }
-.social-list__link + .social-list__link {
-  margin-left: 1em;
-  
-}
+
+
  .social-list__link {
   padding: .5em;
 } 
@@ -261,7 +382,37 @@ justify-content: center;
     opacity: .7;
 }
 
+.intro-portfolio {
+  position: relative;
+  
+}
 
+.section__title--portfolio {
+  color: var(--clr-primary);
+  font-weight: var(--fw-reg);
+  font-size: var(--fs-h2);
+  grid-area: title;
+  text-align: center;
+}
+.section__subtitle--portfolio {
+  background: var(--clr-secondary);
+  color: var(--clr-primary);
+  
+  margin-bottom: 1em;
+  text-align: center;
+  /* display: relative; */
+  padding-right: 0.2em;
+  grid-area: subtitle;
+}
+.portfolio__img--portfolio {
+  width: 100%;
+  grid-area: img;
+  box-shadow: 0.25em 0.25em 0.75em rgba(208, 200, 232, 0.25),
+  0.125em 0.125em 0.25em rgb(184, 179, 203);
+  transition: 
+  transform 750ms cubic-bezier(.5, 0, .5, 1),
+  opacity 250ms linear;
+}
 @media (min-width:600px){
     .section__title--intro {
         text-align: center;
@@ -278,6 +429,38 @@ justify-content: center;
     
         text-align: center;
     }
+    .intro-portfolio {
+      display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+  .portfolio__img--portfolio {
+    grid-area: img;
+        min-width: 450px;
+        height: 300px;
+        position: relative;
+        
+        
+  }
+  .section__title--portfolio {
+  margin-top: 10%;
+  }
+  .section__subtitle--portfolio{
+    align-self: start;
+    grid-column: -1 / 1;
+    grid-row: 2;
+    text-align: right;
+    position: relative;
+    left: -1.5em;
+    width: calc(100% + 1.5em);
+  z-index: -100;
+  margin-top: -150px;
+}
 }
 @media (min-width: 800px){
   .services {
