@@ -6,11 +6,11 @@
 /* Custom properties*/
 
 :root {
-  --ff-primary: "Montserrat", sans-serif;
+  --ff-primary: "Lora", sans-serif;
   --ff-secondary: "Quicksand", sans-serif;
 
-  --fw-reg: 300;
-  --fw-bold: 900;
+  --fw-reg: 400;
+  --fw-bold: 700;
 
   --clr-light: #ffff;
   --clr-primary: #ffdb99;
@@ -43,10 +43,11 @@ html {
 }
 
 body {
+  background-color: var(--clr-dark);
   background-image: url(./assets/images/richard-horvath-_nWaeTF6qo0-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  color: var(--clr-dark);
+  /* color: var(--clr-dark); */
   margin: 0;
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
@@ -58,10 +59,18 @@ img {
 }
 section {
   padding: 5rem 1rem;
+
 }
 
 span {
   font-weight: var(--fw-bold);
+font-family: var(--ff-primary);
+
+}
+.flex {
+  display: flex;
+  margin: .5rem;
+  flex-direction: column;
 }
 
 /*When in focus*/
@@ -311,8 +320,8 @@ header {
   width: 90%;
   height: 300px;
   margin-bottom: 0.5em;
-  box-shadow: 0.25em 0.25em 0.75em rgba(146, 121, 225, 0.25),
-    0.125em 0.125em 0.25em rgb(42, 34, 70);
+  box-shadow: 0.25em 0.25em 0.75em rgba(174, 163, 212, 0.25),
+    0.125em 0.125em 0.25em rgb(114, 111, 125);
   transition: transform 750ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
 }
 .portfolio__item:focus {
@@ -324,8 +333,57 @@ header {
 .portfolio__img--portfolio:hover,
 .portfolio__item:focus .portfolio__img,
 .portfolio__item:focus .portfolio__img--portfolio {
-  transform: scale(1.2);
+  transform: scale(1.1);
   opacity: 0.8 5;
+}
+
+/* Contact me styles*/
+
+.section__title--contact {
+  color: var(--clr-primary);
+  text-align: center;
+}
+.contact-me-body {
+  color: var(--clr-light);
+
+width: 30ch;
+text-align: center;
+}
+.contact-form {
+  width: 100%;
+  margin-top: 30px;
+  margin: 0 auto;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+padding-right: 3em;
+}
+.contact-form > ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: var(--clr-primary);
+  overflow: hidden;
+  display: block;
+  position: relative;
+  
+}
+.contact-form > ul,label {
+  width: 90px;
+margin-right: 1em;
+overflow: hidden;
+}
+
+.contact-form > ul,input, textarea {
+background-color: rgb(245, 234, 212);
+  width: 200px;
+  
+ 
+}
+input[type='submit'] {
+width: fit-content;
+margin: .5em auto
+
 }
 /*Footer*/
 .footer {
@@ -382,12 +440,54 @@ header {
 .portfolio__img--portfolio {
   width: 100%;
   grid-area: img;
-  box-shadow: 0.25em 0.25em 0.75em rgba(208, 200, 232, 0.25),
+  box-shadow: 0.25em 0.25em 0.75em rgba(71, 71, 238, 0.25),
     0.125em 0.125em 0.25em rgb(184, 179, 203);
-  transition: transform 750ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
+  transition: transform 750ms cubic-bezier(0.5, 0, 0.5, 1), 
+  opacity 250ms linear;
 }
-@media (min-width: 600px) {
+.portfolio-item-individual {
+  padding: 0 2em 2em;
+  color: var(--clr-light);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.portfolio-item-individual p {
+  max-width: 800px;
+  text-align: center;
+}
+
+@media (min-width: 800px) {
   .section__title--intro {
+    text-align: center;
+  }
+  .section__title--intro span {
+    display: inline;
+    background: none;
+  }
+  .section__subtitle--intro {
+    margin: 0;
+    text-align: center;
+  }
+  .services {
+    display: flex;
+    margin: 0 auto;
+  }
+  /* + means sibling, so creates margin for element with a sibling next to it*/
+  .service + .service {
+    margin-left: 2em;
+  }
+  .contact-form {
+    width: 48%;
+    margin-left: 0;
+  }
+  input[type='submit'] {
+    width: fit-content;
+    margin: .5em auto
+    
+    }
+}
+ @media (min-width: 900px) {
+  /* .section__title--intro {
     text-align: center;
   }
   .section__title--intro span {
@@ -400,7 +500,7 @@ header {
   }
   .about-me__body {
     text-align: center;
-  }
+  } */
   .intro-portfolio {
     display: grid;
     width: min-content;
@@ -429,16 +529,6 @@ header {
     left: -1.5em;
     width: calc(100% + 1.5em);
     z-index: -100;
-    margin-top: -150px;
+    margin-top: -120px;
   }
-}
-@media (min-width: 800px) {
-  .services {
-    display: flex;
-    margin: 0 auto;
-  }
-  /* + means sibling, so creates margin for element with a sibling next to it*/
-  .service + .service {
-    margin-left: 2em;
-  }
-}
+} 
