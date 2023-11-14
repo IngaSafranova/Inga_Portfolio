@@ -23,7 +23,9 @@
     />
   </head>
   <body>
-    <header>
+    <!-- to help visualy impare people to skip to content with tab -->
+    <a class="skip-to-content" href="#main">Skip to content</a>
+    <header class="primary-header flex ">
       <div class="logo">
         <img
           class="logo-image"
@@ -31,10 +33,14 @@
           alt=""
         />
       </div>
-      <button class="nav-toggle" aria-label="toggle navigation">
+      <button class="mobile-nav-toggle" aria-label="toggle navigation" aria-controls="primary-navigation" >
         <span class="hamburger"></span>
+        <span class="sr-only" aria-expanded="false">Menu</span>
+      </button>
         <nav class="nav">
-          <ul class="nav__list">
+          <ul id="primary-navigation"
+          data-visible="'false"
+          class="primary-navigation flex">
             <li class="nav__item">
               <a href="index.html" class="nav__link">Home</a>
             </li>
@@ -49,7 +55,7 @@
             </li>
           </ul>
         </nav>
-      </button>
+     
     </header>
     <div class="page-container">
   

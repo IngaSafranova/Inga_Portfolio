@@ -2,7 +2,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-
 }
 /* Custom properties*/
 
@@ -41,11 +40,10 @@
 
 html {
   scroll-behavior: smooth;
-  
 }
 
 body {
-   background-color: var(--clr-dark); 
+  background-color: var(--clr-dark);
   background-image: url(./assets/images/richard-horvath-_nWaeTF6qo0-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -63,7 +61,34 @@ img {
 section {
   padding: 2rem 1rem;
   margin: 0.5em;
-   box-shadow: var(--bs); 
+  box-shadow: var(--bs);
+}
+.sr-only {
+  position: absolute; /* settings for screen-reader elements
+                                we dont see them on page but they are in DOM.*/
+  width: 1px;
+  height: 1px; /* Display: none removes them from DOM as well as page*/
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line*/
+  border: 0;
+}
+
+.skip-to-content {
+  position: absolute;
+  z-index: 2500;
+  background: hsl(var(--clr-white));
+  color: hsl(var(--clr-dark));
+  padding: 0.5rem 1em;
+  margin-inline: auto;
+  /* to hide from screen */
+  transform: translateY(-100%);
+  transition: transform 250ms ease-in;
+}
+.skip-to-content:focus {
+  transform: translateY(0);
 }
 
 span {
@@ -73,11 +98,12 @@ span {
 .flex {
   display: flex;
   margin: 0.5rem;
-  flex-direction: column;
 }
+
 .page-container {
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
+  margin-inline: auto; /* to keep content in the middle*/
 }
 
 /*When in focus*/
@@ -139,11 +165,107 @@ h3 {
   margin: 0;
   font-size: var(--fs-h3);
 }
-  
-
 
 /* Navbar styles*/
 
+.logo {
+  width: 200px;
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.primary-navigation {
+  --gap: clamp(1.5rem, 5vw, 3.5rem);
+  --underline-gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* default with no blur if broser not supports*/
+}
+/* Frosted glass efect*/
+
+@supports (backdrop-filter: blur(1rem)) {
+  .primary-navigation {
+    background: hsl(var(--clr-white) / 0.05);
+    backdrop-filter: blur(1rem);
+  }
+}
+.mobile-nav-toggle {
+  display: none;
+}
+.primary-navigation a {
+  text-decoration: none;
+  color: var(--clr-primary);
+  font-weight: var(--fw-bold);
+  padding-left: 2rem;
+  margin-right: 2rem;
+}
+
+@media (max-width: 44.1rem) {
+  .primary-navigation {
+    --underline-gap: 0.5rem;
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%; /* Shorthand to set top bottom right and left position of flex item*/
+
+    list-style: none;
+    padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    flex-direction: column;
+
+    /* to put drop down menu into icon*/
+
+    transform: translateX(100%);
+  }
+
+  /* to open drop down menu*/
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0);
+    transition: transform 500ms ease-in-out;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    right: 1rem;
+    top: 2rem;
+    background: transparent;
+    border: 0;
+
+    /* to put icon without using html*/
+
+    background-image: url(./assets/images/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1.5rem;
+    aspect-ratio: 1;
+  }
+  .nav__item {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url(./assets/images/icon-close.svg);
+  }
+
+  .mobile-nav-toggle:focus-visible {
+    outline: 5px solid white;
+    outline-offset: 5px;
+  }
+}
+
+/* 
 header {
   width: 100%;
   margin-top: 0;
@@ -214,7 +336,7 @@ header {
   transform: rotate(90deg) translateX(-6px);
 }
 /*to remove second line from X that we made above*/
-.nav-open .hamburger::after {
+/*.nav-open .hamburger::after {
   opacity: 0;
 }
 .hamburger {
@@ -233,7 +355,7 @@ header {
 }
 
 /*Seudo classes have to have a content, otherwise they wont work*/
-.hamburger::before,
+/*.hamburger::before,
 .hamburger::after {
   content: "";
   position: absolute;
@@ -245,7 +367,7 @@ header {
 }
 .hamburger::after {
   bottom: 6px;
-}
+} */
 /*Footer*/
 .footer {
   left: 0;
@@ -254,7 +376,7 @@ header {
   background: #111;
   color: var(--clr-primary);
   text-align: center;
-  padding: .25em 0;
+  padding: 0.25em 0;
 
   /* display: flex;
    flex-direction: column;  */
@@ -270,7 +392,6 @@ header {
 .footer a {
   color: inherit;
   text-decoration: none;
-
 }
 
 .social-list__link {
@@ -278,8 +399,7 @@ header {
 }
 .footer__link:hover,
 .social-list__link:hover {
-   opacity: 0.7; 
-  
+  opacity: 0.7;
 }
 
 /* Intro styles */
