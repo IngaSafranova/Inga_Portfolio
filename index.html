@@ -10,9 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Fraunces:ital,opsz,wght@1,9..144,700&family=Karla:wght@400;700&family=Lora:wght@400;700&family=Montserrat:ital,wght@0,500;0,800;1,600&family=Open+Sans:wght@300;400;500;600&family=Quicksand:wght@300;400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Fraunces:ital,opsz,wght@1,9..144,700&family=Karla:wght@400;700&family=Lora:wght@400;700&family=Montserrat:ital,wght@0,500;0,800;1,600&family=Open+Sans:wght@300;400;500;600&family=Quicksand:wght@300;400;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Inga Safranova Web Developer Portfolio Website</title>
 
@@ -25,7 +28,7 @@
   <body>
     <!-- to help visualy impare people to skip to content with tab -->
     <a class="skip-to-content" href="#main">Skip to content</a>
-    <header class="primary-header flex ">
+    <header class="primary-header flex">
       <div class="logo">
         <img
           class="logo-image"
@@ -33,65 +36,103 @@
           alt=""
         />
       </div>
-      <button class="mobile-nav-toggle" aria-label="toggle navigation" aria-controls="primary-navigation" >
+      <button
+        class="mobile-nav-toggle"
+        aria-label="toggle navigation"
+        aria-controls="primary-navigation"
+      >
         <span class="hamburger"></span>
         <span class="sr-only" aria-expanded="false">Menu</span>
       </button>
-        <nav class="nav">
-          <ul id="primary-navigation"
+      <nav class="nav">
+        <ul
+          id="primary-navigation"
           data-visible="'false"
-          class="primary-navigation flex">
-            <li class="nav__item">
-              <a href="index.html" class="nav__link">Home</a>
-            </li>
-            <li class="nav__item">
-              <a href="services.html" class="nav__link">My Services</a>
-            </li>
-            <li class="nav__item">
-              <a href="projects.html" class="nav__link">My Projects</a>
-            </li>
-            <li class="nav__item">
-              <a href="contact-me.html" class="nav__link">Contact Me</a>
-            </li>
-          </ul>
-        </nav>
-     
+          role="tablist"
+          aria-label="primary navigation"
+          class="primary-navigation flex"
+        >
+          <li class="nav__item">
+            <a role="tab" tabindex="0" href="index.html" class="nav__link"
+              >Home</a
+            >
+          </li>
+          <li class="nav__item">
+            <a role="tab" tabindex="0" href="services.html" class="nav__link"
+              >My Services</a
+            >
+          </li>
+          <li class="nav__item">
+            <a role="tab" tabindex="0" href="projects.html" class="nav__link"
+              >My Projects</a
+            >
+          </li>
+          <li class="nav__item">
+            <a role="tab" tabindex="0" href="contact-me.html" class="nav__link"
+              >Contact Me</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
     <div class="page-container">
-  
-    <section class="intro" id="home">
-      <h1 class="section__title section__title--intro">
-        Hello, I am <span>Inga</span>
-      </h1>
-      <p class="section__subtitle section__subtitle--intro">web developer</p>
-      <div class="about-me__body">
-        <p>I am web developer based in West Midlands.</p>
-        <p>I create clasic and classy websites.</p>
-      </div>
-    </section>
-    <footer class="footer">
-      <p>created by IS</p>
-      <ul class="social-list">
-        <li class="social-list__item">
-          <a href="mailto:sfrnv@yahoo.co.uk" class="social-list__link">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a
-            class="social-list__link"
-            href="https://www.linkedin.com/in/inga-safranova/"
-            ><i class="fa-brands fa-linkedin-in"></i
-          ></a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link" href="https://github.com/IngaSafranova"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-        </li>
-      </ul>
-    </footer>
-  </div>
+      <main>
+        <section class="intro" id="home">
+          <h1 class="section__title section__title--intro">
+            Hello, I am <span>Inga</span>
+          </h1>
+          <p class="section__subtitle section__subtitle--intro">
+            web developer
+          </p>
+          <div class="about-me__body">
+            <p>I am web developer based in West Midlands.</p>
+            <p>I create clasic and classy websites.</p>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p>created by IS</p>
+        <ul class="social-list" role="tablist" aria-label="footer navigation">
+          <li class="social-list__item">
+            <a
+              role="tab"
+              tabindex="0"
+              href="mailto:sfrnv@yahoo.co.uk"
+              class="social-list__link"
+            >
+              <i
+                aria-label="reach me via email"
+                class="fa-solid fa-envelope icon"
+              ></i>
+            </a>
+          </li>
+          <li class="social-list__item">
+            <a
+              role="tab"
+              tabindex="0"
+              class="social-list__link"
+              href="https://www.linkedin.com/in/inga-safranova/"
+              ><i
+                aria-label="visit my linkedin profile"
+                class="fa-brands fa-linkedin-in icon"
+              ></i
+            ></a>
+          </li>
+          <li class="social-list__item">
+            <a
+              role="tab"
+              tabindex="0"
+              class="social-list__link"
+              href="https://github.com/IngaSafranova"
+              ><i
+                aria-label="visit my github profile"
+                class="fa-brands fa-github icon"
+              ></i
+            ></a>
+          </li>
+        </ul>
+      </footer>
+    </div>
     <script src="./script.js"></script>
     <script
       src="https://kit.fontawesome.com/e7e6971336.js"

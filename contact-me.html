@@ -23,7 +23,8 @@
         />
       </head>
 <body>
-    <header>
+  <a class="skip-to-content" href="#main">Skip to content</a>
+  <header class="primary-header flex">
     <div class="logo">
       <img
         class="logo-image"
@@ -31,25 +32,44 @@
         alt=""
       />
     </div>
-    <button class="nav-toggle" aria-label="toggle navigation">
+    <button
+      class="mobile-nav-toggle"
+      aria-label="toggle navigation"
+      aria-controls="primary-navigation"
+    >
       <span class="hamburger"></span>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="index.html" class="nav__link">Home</a>
-          </li>
-          <li class="nav__item">
-            <a href="services.html" class="nav__link">My Services</a>
-          </li>
-          <li class="nav__item">
-            <a href="projects.html" class="nav__link">My Projects</a>
-          </li>
-          <li class="nav__item">
-            <a href="contact-me.html" class="nav__link">Contact Me</a>
-          </li>
-        </ul>
-      </nav>
+      <span class="sr-only" aria-expanded="false">Menu</span>
     </button>
+    <nav class="nav">
+      <ul
+        id="primary-navigation"
+        data-visible="'false"
+        role="tablist"
+        aria-label="primary navigation"
+        class="primary-navigation flex"
+      >
+        <li class="nav__item">
+          <a role="tab" tabindex="0" href="index.html" class="nav__link"
+            >Home</a
+          >
+        </li>
+        <li class="nav__item">
+          <a role="tab" tabindex="0" href="services.html" class="nav__link"
+            >My Services</a
+          >
+        </li>
+        <li class="nav__item">
+          <a role="tab" tabindex="0" href="projects.html" class="nav__link"
+            >My Projects</a
+          >
+        </li>
+        <li class="nav__item">
+          <a role="tab" tabindex="0" href="contact-me.html" class="nav__link"
+            >Contact Me</a
+          >
+        </li>
+      </ul>
+    </nav>
   </header>
 <div class="page-container">
 <main>
@@ -61,7 +81,7 @@
         <p class="contact-me-body"> I am interested in freelance opportunities. If you have any questions or requests, please don`t hesitate to contact me.</p>
         <div class="contact-form">
           <form action="https://formsubmit.co/sfrnv@yahoo.co.uk" method="POST" class="flex">
-            <ul class="flex">
+            <ul class=" contact-form flex">
               <li class="half flex">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" placeholder="Name" required>
@@ -92,28 +112,48 @@
         </div>
         </section>
 </main>
-    <footer class="footer">
-        <p>created by IS</p>
-        <ul class="social-list">
-          <li class="social-list__item">
-            <a href="mailto:sfrnv@yahoo.co.uk" class="social-list__link">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-          </li>
-          <li class="social-list__item">
-            <a
-              class="social-list__link"
-              href="https://www.linkedin.com/in/inga-safranova/"
-              ><i class="fa-brands fa-linkedin-in"></i
-            ></a>
-          </li>
-          <li class="social-list__item">
-            <a class="social-list__link" href="https://github.com/IngaSafranova"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-          </li>
-        </ul>
-      </footer>
+<footer class="footer">
+  <p>created by IS</p>
+  <ul class="social-list" role="tablist" aria-label="footer navigation">
+    <li class="social-list__item">
+      <a
+        role="tab"
+        tabindex="0"
+        href="mailto:sfrnv@yahoo.co.uk"
+        class="social-list__link"
+      >
+        <i
+          aria-label="reach me via email"
+          class="fa-solid fa-envelope icon"
+        ></i>
+      </a>
+    </li>
+    <li class="social-list__item">
+      <a
+        role="tab"
+        tabindex="0"
+        class="social-list__link"
+        href="https://www.linkedin.com/in/inga-safranova/"
+        ><i
+          aria-label="visit my linkedin profile"
+          class="fa-brands fa-linkedin-in icon"
+        ></i
+      ></a>
+    </li>
+    <li class="social-list__item">
+      <a
+        role="tab"
+        tabindex="0"
+        class="social-list__link"
+        href="https://github.com/IngaSafranova"
+        ><i
+          aria-label="visit my github profile"
+          class="fa-brands fa-github icon"
+        ></i
+      ></a>
+    </li>
+  </ul>
+</footer>
     </div>
       <script src="./script.js"></script>
       <script
