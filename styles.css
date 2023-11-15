@@ -163,7 +163,7 @@ h3 {
   margin-top: 1rem;
   padding-bottom: 0.5rem;
   padding-left: 0.1em;
-  color: var(--clr-dark);
+  color:var(--clr-dark);
   background-color: var(--clr-secondary);
   text-align: left;
   border-bottom-left-radius: 35%;
