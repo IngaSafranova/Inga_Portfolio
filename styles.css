@@ -284,10 +284,7 @@ h3 {
 
 .my-services {
   color: var(--clr-light);
-  /* background-color: var(--clr-dark);
-  background-image: url(./assets/images/richard-horvath-_nWaeTF6qo0-unsplash.jpg);
-  background-size: cover;
-  background-repeat: no-repeat; */
+  height: 100dvh;
   text-align: center;
   box-shadow: var(--bs);
   
@@ -327,7 +324,7 @@ h3 {
   /* background-color: var(--clr-dark); */
   color: var(--clr-primary);
   text-align: center;
- height:80%;
+ height:100dvh;
 }
 .section__subtitle--work {
   color: var(--clr-secondary);
@@ -339,7 +336,7 @@ h3 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 .portfolio__item {
-  overflow: hidden;
+width: fit-content;
 }
 
 .portfolio__img {
@@ -381,22 +378,33 @@ width: 30ch;
   display: flex;
   flex-direction: column;
   place-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: var(--bs);
+  
 }
 
 .contact-form {
   width: 100%;
   margin-top: 30px;
   margin: 0 auto;
-  /* border: 1px solid rgba(255, 219, 153, 0.5);
-  box-shadow: var(--bs); */
+  
   display: flex;
   flex-direction: column;
-  
+  justify-content: center;
   padding-right: 3em;
   transition: transform 750ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
 }
-.contact-form > ul,
-li {
+fieldset {
+  display: flex;
+  justify-items: center;
+  padding-left: 4.5rem;
+}
+legend {
+  color: var(--clr-primary);
+}
+.contact-form > p
+ {
   padding: 0;
   margin: 0;
   width: 200px;
@@ -405,23 +413,10 @@ li {
   display: block;
   position: relative;
 }
-.contact-form > ul,
-label {
-  width: 90px;
-  margin-right: 1em;
-  
-}
-
-.contact-form > ul,
-input,
-textarea {
-  background-color: rgb(245, 234, 212);
-align-self: center;
-  
-}
-input[type="submit"] {
+form > .btn {
+ 
   width: fit-content;
-  margin: 0.5em auto;
+  place-self: center;
 }
 .find-me {
   color: var(--clr-light);
@@ -437,7 +432,7 @@ input[type="submit"] {
 .google-map:focus,
 .contact-form:hover,
 .contact-form:focus {
-  transform: scale(1.1);
+  transform: scale(1.05);
   opacity: 0.8 5;
 }
 
@@ -449,8 +444,9 @@ input[type="submit"] {
   color: var(--clr-primary);
   font-weight: var(--fw-reg);
   font-size: var(--fs-h2);
-  grid-area: title;
+
   text-align: center;
+  height: fit-content;
 }
 .section__subtitle--portfolio {
   background: var(--clr-secondary);
@@ -461,10 +457,13 @@ input[type="submit"] {
   /* display: relative; */
   padding-right: 0.2em;
   grid-area: subtitle;
+  height: fit-content;
+
 }
 .portfolio__img--portfolio {
   width: 100%;
-  grid-area: img;
+  height: fit-content;
+  
   box-shadow: 0.25em 0.25em 0.75em rgba(71, 71, 238, 0.25),
     0.125em 0.125em 0.25em rgb(184, 179, 203);
   transition: transform 750ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
@@ -472,18 +471,15 @@ input[type="submit"] {
 .portfolio-item-individual {
   padding: 0 2em 2em;
   color: var(--clr-light);
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.portfolio-item-individual p {
-  max-width: 800px;
-  text-align: center;
+  
+  height: fit-content;
+  
 }
 
 
 /* Settings for hamburger menu */
 
-@media (max-width: 44.1rem) {
+@media (max-width: 46.1rem) {
   
   .primary-navigation {
     --underline-gap: 0.5rem;
@@ -682,28 +678,28 @@ header {
     display: flex;
     justify-content: space-evenly;
   }
+  .contact-me-body {
+    place-self: center;
+  }
+  
+  .container--contact-me {
+    display: flex;
+
+   
+  }
   .contact-form-side {
-    display: flex;
-    flex-direction: column;
 
-    width: 50%;
+  padding-inline: 1rem;
+    
   }
-  .contact-form {
-    width: 100%;
-    margin-left: 0;
-  }
-  input[type="submit"] {
-    width: fit-content;
-    margin: 0.5em auto;
-  }
+
   .find-me {
-    display: flex;
-    flex-direction: column;
-
-    width: 48%;
-    margin: 0 auto;
+   
+   justify-self: end;
+   margin: 0;
+   width: 50%;
   }
-  .map-container {
+   .map-container {
     width: fit-content;
     place-self: center;
   }
@@ -712,57 +708,69 @@ header {
     height: 355.6px;
     align-self: flex-end;
     margin-top: 50px;
-  }
+  } 
 }
 @media (min-width: 900px) {
-  /* .section__title--intro {
-    text-align: center;
-  }
-  .section__title--intro span {
-    display: inline;
-    background: none;
-  }
-  .section__subtitle--intro {
-    margin: 0;
-    text-align: center;
-  }
-  .about-me__body {
-    text-align: center;
-  } */
-  .intro-portfolio {
-    display: grid;
-    width: min-content;
-    margin: 0 auto;
-    grid-column-gap: 1em;
-    grid-template-areas:
-      "img title"
-      "img subtitle";
-    grid-template-columns: min-content max-content;
-  }
-  .portfolio__img--portfolio {
-    grid-area: img;
-    min-width: 450px;
-    height: 300px;
-    position: relative;
-  }
-  .section__title--portfolio {
-    margin-top: 10%;
-  }
-  .section__subtitle--portfolio {
-    align-self: start;
-    grid-column: -1 / 1;
-    grid-row: 2;
-    text-align: right;
-    position: relative;
-    left: -1.5em;
-    width: calc(100% + 1.5em);
-    z-index: -100;
-    margin-top: -120px;
-  }
+  
+  
   .contact-me-body {
     place-self: center;
   }
-  .contact-form > form {
-    place-self: center;
+  
+  .container--contact-me {
+    display: flex;
+    justify-content: stretch;
+  
+  }
+  .contact-form-side {
+flex-grow: 3;
+  padding-inline: 5rem;
+margin-right: 5rem;
+  
+  }
+
+  .find-me {
+   display: flex;
+   flex-direction: column;
+  }
+}
+@media (min-width: 1150px){
+  .intro-portfolio{
+    display: grid;
+    width: 100%;
+    height:500px;
+    margin: 0;
+
+    grid-template-rows:repeat(12, 1fr);
+  grid-template-columns:repeat(12, 1fr);
+    box-shadow: var(--bs);
+    
+  }
+  .portfolio__item{
+    grid-row: 1/3;
+    grid-column:1/3 ;
+    min-width: 450px;
+    height: 300px;
+  width: 100%;
+    margin-top: 5%;
+    padding: 1rem;
+  }
+  .section__title--portfolio {
+    margin-top: 10%;
+    padding: 1rem;
+    width: fit-content;
+    grid-row: 1/2;
+    grid-column: 6/15;
+  }
+  .section__subtitle--portfolio {
+    color: var(--clr-dark);
+   grid-row: 2/3;
+   grid-column: 6/12;
+  justify-content: center;
+    
+  }
+  .portfolio-item-individual {
+    grid-row: 3/4;
+    grid-column: 4/12;
   }
 }
