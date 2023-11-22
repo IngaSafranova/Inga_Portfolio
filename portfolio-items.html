@@ -34,10 +34,9 @@
         class="mobile-nav-toggle"
         aria-label="toggle navigation"
         aria-controls="primary-navigation"
-        role="tab"
       >
         <span class="hamburger"></span>
-        <span class="sr-only" role="tab" aria-expanded="false">Menu</span>
+        <span class="sr-only" aria-expanded="false">Menu</span>
       </button>
       <nav class="nav">
         <ul
@@ -47,16 +46,16 @@
           aria-label="primary navigation"
           class="primary-navigation flex"
         >
-          <li  class="nav__item">
+          <li role="tab" tabindex="0" class="nav__item">
             <a href="index.html" class="nav__link">Home</a>
           </li>
-          <li  class="nav__item">
+          <li role="tab" tabindex="0" class="nav__item">
             <a href="services.html" class="nav__link">My Services</a>
           </li>
-          <li  class="nav__item">
+          <li role="tab" tabindex="0" class="nav__item">
             <a href="projects.html" class="nav__link">My Projects</a>
           </li>
-          <li  class="nav__item">
+          <li role="tab" tabindex="0" class="nav__item">
             <a href="contact-me.html" class="nav__link">Contact Me</a>
           </li>
         </ul>
@@ -65,35 +64,34 @@
 
     <main class="intro intro-portfolio">
       <div class="individual-portfolio-item">
-      <h1 class="section__title section__title--portfolio">
-        The title of my project
-      </h1>
-      <p class="section__subtitle section__subtitle--portfolio">
-        The space travel website
-      </p>
-      <a href="https://space-travel-is.netlify.app/" class="portfolio__item">
-        <img
-          src="./assets/images/space1.webp"
-          alt="link to the space travel website"
-          class="portfolio__img--portfolio"
-        />
-      </a>
-      <div class="portfolio-description">
-        <p>
-          This is a space travel multipage website, created as a Frontend Mentor
-          challenge. This webpage was created using HTML, CSS and
-          VanillaJavascript.
+        <h1 class="section__title section__title--portfolio">
+          The title of my project
+        </h1>
+        <p class="section__subtitle section__subtitle--portfolio">
+          The space travel website
         </p>
-        <p>Click on the picture to visit the website.</p>
+        <a href="https://space-travel-is.netlify.app/" class="portfolio__item">
+          <img
+            src="./assets/images/space1.webp"
+            alt="link to the space travel website"
+            class="portfolio__img--portfolio"
+          />
+        </a>
+        <div class="portfolio-description">
+          <p>
+            This is a space travel multipage website, created as a Frontend
+            Mentor challenge. This webpage was created using HTML, CSS and
+            VanillaJavascript.
+          </p>
+          <p>Click on the picture to visit the website.</p>
+        </div>
       </div>
-    </div>
-      </main>
-    
+    </main>
 
     <footer class="footer">
       <p>&copy created by IS</p>
-      <ul class="social-list"  aria-label="footer navigation">
-        <li  class="social-list__item">
+      <ul role="tablist" class="social-list" aria-label="footer navigation">
+        <li role="tab" tabindex="0" class="social-list__item">
           <a href="mailto:sfrnv@yahoo.co.uk" class="social-list__link">
             <i
               aria-label="reach me via email"
@@ -101,7 +99,7 @@
             ></i>
           </a>
         </li>
-        <li  class="social-list__item">
+        <li role="tab" tabindex="0" class="social-list__item">
           <a
             class="social-list__link"
             href="https://www.linkedin.com/in/inga-safranova/"
@@ -111,7 +109,7 @@
             ></i
           ></a>
         </li>
-        <li  class="social-list__item">
+        <li role="tab" tabindex="0" class="social-list__item">
           <a class="social-list__link" href="https://github.com/IngaSafranova"
             ><i
               aria-label="visit my github profile"
