@@ -72,7 +72,7 @@ main {
 img {
   display: block;
   max-width: 100%;
-            
+
 }
 
 .sr-only {
@@ -187,6 +187,10 @@ h3 {
   height: auto;
    margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
    margin-top: 5rem; 
+}
+.logo img {
+  width: 100%;
+  height: auto;
 }
 
 .primary-header {
