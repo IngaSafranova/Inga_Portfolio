@@ -838,7 +838,7 @@ header {
     grid-column: 4/12;
   }
 }
-@media (min-width:1440px){
+/* @media (min-width:1440px){
   .primary-header {
     max-width: 1440px;
   }
@@ -848,4 +848,4 @@ header {
   footer {
     max-width: 1440px;
   }
-}
+} */
