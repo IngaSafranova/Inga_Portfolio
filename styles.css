@@ -158,6 +158,7 @@ h3 {
 .section__title {
   margin-bottom: 0.25em;
   text-align: center;
+margin-top: 10%
 }
 .section__title--intro {
   font-weight: var(--fw-reg);
@@ -167,8 +168,10 @@ h3 {
   display: block;
   position: relative;
   margin-top: 1rem;
+  
   padding-bottom: 0.5rem;
   padding-left: 0.1em;
+
   color:var(--clr-dark);
   background-color: var(--clr-secondary);
   text-align: left;
@@ -189,7 +192,7 @@ h3 {
    margin-top: 5rem; 
 }
 .logo img {
-  width: 100%;
+  width: 750px;
   height: auto;
 }
 
@@ -780,6 +783,10 @@ header {
 
 @media (min-width: 1150px){
   
+  .section__subtitle--intro {
+    margin-inline: 5rem;
+   
+  }
   .portfolio {
     display: flex;
     flex-direction: row;
@@ -838,14 +845,3 @@ header {
     grid-column: 4/12;
   }
 }
-/* @media (min-width:1440px){
-  .primary-header {
-    max-width: 1440px;
-  }
-  main {
-    max-width: 1440px;
-  }
-  footer {
-    max-width: 1440px;
-  }
-} */
